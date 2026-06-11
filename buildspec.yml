@@ -4,8 +4,8 @@ phases:
   pre_build:
     commands:
       - echo Logging in to DockerHub...
-      - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
-      - REPOSITORY_URI="docker.io/anujsharma1990/frontend"
+      - echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
+      - REPOSITORY_URI="docker.io/thereaperyash/frontend"
       - CONTAINER_NAME="frontend-container"
       - IMAGE_TAG="latest"
   build:
